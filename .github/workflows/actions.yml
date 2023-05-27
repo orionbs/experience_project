@@ -27,7 +27,7 @@ jobs:
           path: target/*.jar
 
       - name: Checkout the variables and secrets
-        run: echo "Username ${{ secrets.USERNAME }}" | echo "Token ${{ secrets.TOKEN }}" | echo "Repository ${{ github.repository }}" | echo "Actor ${{ github.actor }}"
+        run: echo "Username ${{ secrets.USERNAME }}, Token ${{ secrets.TOKEN }}, Repository ${{ github.repository }}, Actor ${{ github.actor }}"
 
       - name: Login to github container registry
         uses: docker/login-action@v2
@@ -47,5 +47,5 @@ jobs:
           context: .
           file: Dockerfile
           push: true
-          tags: ghcr.io/${{ github.repository }}:latest
+          tags: ghcr.io/orionbs/experience_service:latest
           load: false
