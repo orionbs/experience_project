@@ -1,4 +1,4 @@
-FROM openjdk:17-alpine as builder
+FROM openjdk:17-alpine
 MAINTAINER Orion Beauny-Sugot
-COPY --from=builder /target/*.jar *.jar
+COPY target/*.jar *.jar
 ENTRYPOINT ["java","-jar","*.jar"]
