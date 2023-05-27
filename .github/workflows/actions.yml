@@ -50,5 +50,5 @@ jobs:
           context: .
           file: Dockerfile
           push: true
-          tags: $REGISTRY/$NAMESPACE/$IMAGE:$TAG
+          tags: ghcr.io/${{ github.actor }}/${{ github.repository }}:latest
           load: false
