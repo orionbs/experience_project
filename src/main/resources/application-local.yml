@@ -1,0 +1,13 @@
+server:
+  address: 127.0.0.1
+  port: 10001
+
+spring:
+  data:
+    mongodb:
+      username: root
+      password: rootpassword
+      database: experience_database
+      port: 27017
+      host: localhost
+      authentication-database: admin
