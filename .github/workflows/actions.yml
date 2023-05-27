@@ -47,5 +47,5 @@ jobs:
           context: .
           file: Dockerfile
           push: true
-          tags: ghcr.io/orionbs/experience_service:latest
+          tags: ghcr.io/${{ github.repository }}:latest
           load: false
