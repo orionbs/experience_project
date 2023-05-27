@@ -16,8 +16,8 @@ springdoc:
     path: /documentation
 
 persistence:
-  host: localhost
-  port: 3306
-  username: root
-  password: rootpassword
+  host: jagster-development-do-user-9861309-0.b.db.ondigitalocean.com
+  port: 25060
+  username: experience_service
+  password: AVNS__27QytIOO_SGHTzEWxH
   database: experience_database

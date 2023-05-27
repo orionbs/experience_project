@@ -1,7 +1,8 @@
 package fr.orionbs.experience_service.adapter.exception;
 
-import fr.orionbs.experience_service.adapter.exception.UnknownExperienceException;
-import fr.orionbs.experience_service.adapter.exception.response.ExceptionResponse;
+import fr.orionbs.experience_service.domain.exception.ExperienceInitiationException;
+import fr.orionbs.experience_service.domain.exception.InformationAdditionException;
+import fr.orionbs.experience_service.domain.exception.InformationAssociationException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.MessageSource;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
@@ -23,20 +24,14 @@ public class ExceptionApiAdapter {
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public ExceptionResponse handleMethodArgumentNotValidException(MethodArgumentNotValidException methodArgumentNotValidException) {
-        ExceptionResponse exceptionResponse = new ExceptionResponse();
-        exceptionResponse.setHttpStatus(HttpStatus.BAD_REQUEST);
-        exceptionResponse.setErrors(methodArgumentNotValidException.getAllErrors().stream().map(DefaultMessageSourceResolvable::getDefaultMessage).collect(Collectors.toList()));
-        return exceptionResponse;
+    public List<String> handleMethodArgumentNotValidException(MethodArgumentNotValidException methodArgumentNotValidException) {
+        return methodArgumentNotValidException.getAllErrors().stream().map(DefaultMessageSourceResolvable::getDefaultMessage).collect(Collectors.toList());
     }
 
-    @ExceptionHandler({UnknownExperienceException.class})
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    public ExceptionResponse handleUnknownException(Exception exception, Locale locale) {
-        ExceptionResponse exceptionResponse = new ExceptionResponse();
-        exceptionResponse.setHttpStatus(HttpStatus.NOT_FOUND);
-        exceptionResponse.setErrors(List.of(exceptionMessageSource.getMessage(exception.getMessage(), null, locale)));
-        return exceptionResponse;
+    @ExceptionHandler({ExperienceInitiationException.class, InformationAdditionException.class, InformationAssociationException.class})
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public String handleException(Exception exception, Locale locale) {
+        return exceptionMessageSource.getMessage(exception.getMessage(), null, locale);
     }
 
 }
