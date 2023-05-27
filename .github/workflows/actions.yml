@@ -46,4 +46,4 @@ jobs:
           file: Dockerfile
           push: true
           tags: experience_service:latest
-          load: true
+          load: false
