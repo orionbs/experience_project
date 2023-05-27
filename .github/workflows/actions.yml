@@ -4,7 +4,7 @@ on: [ push ]
 
 jobs:
 
-  Build the java project and docker image:
+  build_jar_file_and_docker_image:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the repository.
@@ -45,7 +45,7 @@ jobs:
           image: "experience_service:latest"
 
 
-  Push the docker image:
+  push_the_docker_image:
     runs-on: ubuntu-latest
     steps:
       - name: Set up qemu
