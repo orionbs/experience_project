@@ -3,9 +3,6 @@ package fr.orionbs.experience_service.adapter.persistence.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Data
 @Entity
 @Table(name = "task")
@@ -21,7 +18,8 @@ public class TaskEntity {
     @Column(name = "value", nullable = false)
     private String value;
 
-    @ManyToMany(mappedBy = "tasks")
-    private List<ExperienceEntity> experiences = new ArrayList<>();
+    @ManyToOne
+    @JoinColumn(name = "experience_id")
+    private ExperienceEntity experience;
 
 }

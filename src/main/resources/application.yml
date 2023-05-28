@@ -1,0 +1,16 @@
+server:
+  address: 127.0.0.1
+  port: 10001
+
+spring:
+  application:
+    name: ExperienceService
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    generate-ddl: false
+
+springdoc:
+  swagger-ui:
+    path: /documentation
