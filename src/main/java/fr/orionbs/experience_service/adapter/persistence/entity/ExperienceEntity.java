@@ -23,11 +23,14 @@ public class ExperienceEntity {
     @JoinColumn(name = "company_id", referencedColumnName = "id")
     private CompanyEntity company;
 
-    @ManyToMany
-    @JoinTable(name="experience_task",
-            joinColumns= @JoinColumn(name="experience_id", referencedColumnName="id"),
-            inverseJoinColumns= @JoinColumn(name="task_id", referencedColumnName="id")
-    )
+    @OneToMany(mappedBy = "experience")
     private List<TaskEntity> tasks = new ArrayList<>();
+
+    @ManyToMany
+    @JoinTable(name="experience_skill",
+            joinColumns= @JoinColumn(name="experience_id", referencedColumnName="id"),
+            inverseJoinColumns= @JoinColumn(name="skill_id", referencedColumnName="id")
+    )
+    private List<SkillEntity> skills = new ArrayList<>();
 
 }
