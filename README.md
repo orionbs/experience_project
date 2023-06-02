@@ -1,11 +1,36 @@
-# Experience Service
+# Experience Project
 
 ## Introduction
 
-- Purpose of the document
-- Background information about the management server
+- This project is based for managing my professional experiences which is used by my web-folio.
+- The experience project doesn't interact with others projects yet.
 
-## System Requirements
+## Running Purpose
+
+### Image
+
+The image can be pull on Docker Hub through this command.
+
+```bash
+docker pull orionbeauny/experience_project
+```
+
+### Requirements
+
+- This image needs a MySQL database to work correctly.
+- These environments are requirement to be filled properly.
+
+```bash
+PERSISTENCE_HOST
+PERSISTENCE_PORT
+PERSISTENCE_USERNAME
+PERSISTENCE_PASSWORD
+PERSISTENCE_DATABASE
+```
+
+## Developing Purpose
+
+### System Requirements
 
 - Minimum hardware requirements
     - Java 17 or higher
@@ -13,7 +38,7 @@
 - Network requirements
     - Ethernet connection
 
-## Installation
+### Installation
 
 - Clone this repository
 
@@ -21,44 +46,11 @@
 cd ./experience_service
 ```
 
-- Pre-installation considerations
-- Installation instructions
-- Post-installation configuration
-
-## Usage
-
-## User Management
-
-- Creating user accounts
-- Modifying user accounts
-- Deleting user accounts
-- User access control
-
-## Security
-
-- Authentication methods
-- Password policies
-- Encryption protocols
-- Auditing and logging
-
 ## Contributing
 
-Pull requests are welcome. For major changes, please open an issue first
-to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
-## Maintenance and Troubleshooting
-
-- Regular maintenance tasks
-- Troubleshooting common issues
-- Backup and recovery procedures
+- This is a personal project, so any pull request would never be merged.
+- No offense.
 
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
-
-## Conclusion
-
-- Summary of the document
-- Additional resources for support or further information

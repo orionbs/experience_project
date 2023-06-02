@@ -11,7 +11,7 @@
 	</parent>
 
 	<groupId>fr.orionbs</groupId>
-	<artifactId>experience_service</artifactId>
+	<artifactId>experience_project</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>experience_service</name>
 	<description>experience_service</description>
