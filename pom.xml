@@ -13,8 +13,8 @@
 	<groupId>fr.orionbs</groupId>
 	<artifactId>experience_project</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>experience_service</name>
-	<description>experience_service</description>
+	<name>experience_project</name>
+	<description>experience_project</description>
 
 	<properties>
 		<java.version>17</java.version>
